@@ -1,5 +1,6 @@
 package ua.logos.project.entity;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,5 +21,15 @@ public abstract class BaseEntity {
 		this.id = id;
 	}
 	
-	private Boolean is_deleted;
+	@Column(name="is_deleted")
+	private Boolean isDeleted;
+
+	public Boolean getIsDeleted() {
+		return isDeleted;
+	}
+
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
+	}
+	
 }
